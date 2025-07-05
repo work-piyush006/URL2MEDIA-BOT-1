@@ -4,7 +4,7 @@ from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, MessageH
 from datetime import datetime, timedelta
 
 # ✅ BOT TOKEN setup (Render uses ENV, Pydroid uses fallback token)
-BOT_TOKEN = os.environ.get("7693918135:AAGKT8udJxAGcPFfhO6zuueHbg2MB-88n-w")
+BOT_TOKEN = os.environ.get("7693918135:AAGKT8udJxAGcPFfhO6zuueHbg2MB-88n-w"l)
 
 ADMIN_USERNAME = "@URL2MEDIA"
 def load_premium_users():
@@ -128,7 +128,7 @@ def button(update: Update, context: CallbackContext):
         )
 
 def main():
-    updater = Updater(BOT_TOKEN, use_context=True)
+    updater = Updater("7693918135:AAGKT8udJxAGcPFfhO6zuueHbg2MB-88n-w" , use_context=True)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CallbackQueryHandler(button))
