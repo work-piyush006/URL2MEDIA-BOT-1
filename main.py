@@ -128,7 +128,7 @@ def button(update: Update, context: CallbackContext):
         )
 
 def main():
-    updater = Updater("BOT_TOKEN" , use_context=True)
+    updater = Updater(BOT_TOKEN, use_context=True)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CallbackQueryHandler(button))
