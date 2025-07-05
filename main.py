@@ -3,9 +3,10 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, MessageHandler, Filters, CallbackContext
 from datetime import datetime, timedelta
 
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
-ADMIN_USERNAME = "@URL2MEDIA"
+# ✅ BOT TOKEN setup (Render uses ENV, Pydroid uses fallback token)
+BOT_TOKEN = os.environ.get("7693918135:AAGKT8udJxAGcPFfhO6zuueHbg2MB-88n-w")
 
+ADMIN_USERNAME = "@URL2MEDIA"
 def load_premium_users():
     if not os.path.exists("user_premium.txt"):
         return {}
