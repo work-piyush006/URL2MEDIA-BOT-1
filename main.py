@@ -128,13 +128,18 @@ def button(update: Update, context: CallbackContext):
         )
 
 def main():
+    if not BOT_TOKEN or not BOT_TOKEN.startswith("769"):
+        raise ValueError("❌ BOT_TOKEN is not set correctly!")
+
     updater = Updater(BOT_TOKEN, use_context=True)
     dp = updater.dispatcher
+
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CallbackQueryHandler(button))
     dp.add_handler(MessageHandler(Filters.text & ~Filters.command, handle_message))
-    updater.start_polling()
+
     print("🤖 Bot is running... Waiting for messages")
+    updater.start_polling()
     updater.idle()
 
 if __name__ == "__main__":
