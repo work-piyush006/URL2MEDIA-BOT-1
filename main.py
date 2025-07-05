@@ -156,11 +156,13 @@ def button(update: Update, context: CallbackContext):
         )
 
 # ✅ Main function
+BOT_TOKEN = os.environ.get("BOT_TOKEN") or "7693918135:AAGKT8udJxAGcPFfhO6zuueHbg2MB-88n-w"
+
 def main():
     if not BOT_TOKEN or not BOT_TOKEN.startswith("769"):
         raise ValueError("❌ BOT_TOKEN is not set correctly!")
 
-    updater = Updater(BOT_TOKEN, use_context=True)
+    updater = Updater(token=BOT_TOKEN, use_context=True)
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start))
@@ -171,6 +173,5 @@ def main():
     updater.start_polling()
     updater.idle()
 
-# ✅ Entry point
 if __name__ == "__main__":
     main()
